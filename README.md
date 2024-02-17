@@ -52,3 +52,30 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+
+## Deploy
+
+### Prerequisites
+
+* [Install firebase cli](https://firebase.google.com/docs/cli#install_the_firebase_cli)
+
+### Deploy to prod environment
+
+The deployment to prod will be done in a github action pipeline, but if you want to deploy it manually you can execute the next command
+
+```
+firebase deploy --only hosting
+```
+
+After execute the files in the static folder will be pushed to the firebase hosting and are available in the hosting url (you will get a reminder of that url after execute the previous command)
+
+### Deploy a prerelase
+
+To deploy a temporally preview of the webpage you must execute the following command:
+
+```
+firebase hosting:channel:deploy [name of the preview]
+```
+
+After execute it firebase will provide the previo url and the expiration time
