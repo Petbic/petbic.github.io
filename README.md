@@ -79,3 +79,5 @@ firebase hosting:channel:deploy [name of the preview]
 ```
 
 After execute it firebase will provide the previo url and the expiration time
+
+> You can define the expiration time using the `-e` parameter: ex. `firebase hosting:channel:deploy [name of the preview] -e 10m`
