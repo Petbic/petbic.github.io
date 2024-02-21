@@ -1,31 +1,13 @@
 ---
+import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
+import Discover from "../components/Discover.astro"
 ---
 
-<Layout title="PetBic">
-  <main>
-    <section class="pb-welcome ">
-      <h1 class="pb-welcome__title text-3xl font-bold underline">¡Bienvenido a PetBic!</h1>
-      <h3 class="pb-welcome__text">
-        Descubre la llave para fortalecer tu conexión con tu mascota en PetBic,
-        donde el control total de la información de tu amigo peludo está a tu
-        alcance. PetBic abarca todas las dimensiones del cuidado de tu mascota.
-        Toma decisiones informadas sobre alimentación, medidas y cuidados. Con
-        PetBic, accede a datos y análisis para mejorar la calidad de vida de tu
-        amigo peludo. Embárcate en la experiencia PetBic y bríndale a tu mascota
-        el cuidado que se merece.
-      </h3>
-    </section>
-  </main>
+<Layout title="PetBic" description=" PetBic covers all dimensions of pet care">
+
+		<Hero/>
+
 </Layout>
 
-<style>
-  .pb-welcome {
-    display: block;
-    width: 100%;
-    height: 689px;
-    background-image: url("/backgrounds/welcome-background.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-</style>
+<Discover/>
