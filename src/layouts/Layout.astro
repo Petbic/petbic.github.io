@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
+import { ScrollObserver } from "astro-scroll-observer";
 
 interface Props {
 	title: string;
@@ -18,20 +19,22 @@ const { title, description } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<ScrollObserver />
 		<title>{title}</title>
 	</head>
 	<body>
-		<section class="py-16  px-2  z-10 fixed top-0 w-full">
+		<section class="section-header py-16 px-2 fixed w-full transition-all">
 			<Header />
 		</section>
 		<slot />
-	</body>
+	</body><style is:global>
+		.section-wrapper {
+			max-width: 1440px;
+			margin: auto;
+			padding: 0 29px;
+		}
+		[data-is-top="false"] .section-header {
+			padding-top: 0;
+		}
+	</style>
 </html>
-<style is:global>
-	.section-wrapper{
-		max-width: 1440px;
-		margin: auto;
-		padding: 0 29px;
-		border: 1px solid red;
-	}
-</style>
