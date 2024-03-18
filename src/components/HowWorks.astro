@@ -1,3 +1,7 @@
+---
+import CardHowWorks from "../components/CardHowWorks.vue";
+---
+
 <section
     class="section-how-works bg-gradient-to-r from-[#097DE0] via-[#4158D0] via-0% to-[#893CD7] to-100%"
 >
@@ -23,25 +27,27 @@
         <div
             class="section-how-works-container-images flex flex-col items-center gap-6 pt-12 pb-12 md:flex-row md:w-2/3 md:pt-16 md:pb-16"
         >
-            <div class="container flex flex-col items-center gap-4 md:gap-6">
-                <img src="/img/mobile-works-01.png" alt="mockup hero" />
-                <p class="text-lg text-white lg:text-xl">
-                    Download the Application
-                </p>
-                <button>
-                    <img src="/img/down-arrow.png" alt="arrow" />
-                </button>
-            </div>
-            <div class="container flex flex-col items-center gap-4 md:gap-6">
-                <img src="/img/mobile-works-02.png" alt="mockup hero" />
-                <p class="text-lg text-white lg:text-xl">Record Daily Data</p>
-                <img src="/img/down-arrow.png" alt="arrow" />
-            </div>
-            <div class="container flex flex-col items-center gap-4 md:gap-6">
-                <img src="/img/mobile-works-03.png" alt="mockup hero" />
-                <p class="text-lg text-white lg:text-xl">Check the evolution</p>
-                <img src="/img/down-arrow.png" alt="arrow" />
-            </div>
+            <CardHowWorks
+                client:load
+                title="Download Aplication"
+                image="/img/mobile-works-01.png"
+                alt="Image Download Aplication"
+                description="Get PetBic on your device in just a few minutes. Download it easily and quickly to start enjoying the revolutionary pet care experience."
+            />
+            <CardHowWorks
+                client:load
+                title="Record Daily Data"
+                image="/img/mobile-works-02.png"
+                alt="Image Record Daily Data"
+                description="Quickly and easily input key information about your pet's nutrition,behavior, measurements, and weight. PetBic makes daily tracking intuitive and efficient."
+            />
+            <CardHowWorks
+                client:load
+                title="Check the evolution"
+                image="/img/mobile-works-03.png"
+                alt="Image Check the evolution"
+                description="Observe the progress and development of your furry friends at a glance. PetBic provides you with visual tools and practical analisys to keep everything under control and ensure the ongoing well-being of your pets."
+            />
         </div>
     </div>
 </section>
