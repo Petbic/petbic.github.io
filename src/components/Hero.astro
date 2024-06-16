@@ -47,6 +47,7 @@
             </p>
             <div class="flex my-2">
                 <button
+                    id="openContactForm"
                     class="py-2 px-3 inline-flex items-center gap-x-2 md:px-8 text-sm text-white font-bold rounded-full bg-gradient-to-r from-[#230DE0] via-[#FFCC70] via-0% to-[#FA709A] to-100%"
                 >
                     Join to the waitlist
@@ -61,3 +62,13 @@
         </div>
     </div>
 </section>
+
+<script is:inline>
+    const openContactFormButton = document.getElementById("openContactForm");
+    openContactFormButton.addEventListener("click", () => {
+        const contactFormModal = document.getElementById("contactFormModal");
+        contactFormModal.classList.remove("hidden");
+    });
+
+
+</script>
