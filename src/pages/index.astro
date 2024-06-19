@@ -4,9 +4,9 @@ import Layout from "../layouts/Layout.astro";
 import Discover from "../components/Discover.astro";
 import HowWorks from "../components/HowWorks.astro";
 import WhoWeAre from "../components/WhoWeAre.astro";
-import Footer from '../components/Footer.astro'
+import Footer from "../components/Footer.astro";
 import GetTheApp from "../components/GetTheApp.astro";
-import Faq from "../components/Faq.astro"
+import Faq from "../components/Faq.astro";
 import ModalForm from "../components/ModalForm.astro";
 ---
 
@@ -15,8 +15,46 @@ import ModalForm from "../components/ModalForm.astro";
 	<Discover />
 	<HowWorks />
 	<WhoWeAre />
-	<GetTheApp/>
-	<Faq/>
-	<Footer/>
-	<ModalForm/>
+	<GetTheApp />
+	<Faq />
+	<Footer />
+	<ModalForm />
 </Layout>
+
+<script is:inline>
+	document.addEventListener("DOMContentLoaded", () => {
+		const openContactFormButtons =
+			document.querySelectorAll(".openContactForm");
+		const closeContactFormButtons =
+			document.querySelectorAll(".closeContactForm");
+		const contactFormModals =
+			document.querySelectorAll(".contactFormModal");
+
+		openContactFormButtons.forEach((button) => {
+			button.addEventListener("click", () => {
+				contactFormModals.forEach((modal) => {
+					modal.classList.remove("hidden");
+					modal.style.display = "block";
+				});
+			});
+		});
+
+		closeContactFormButtons.forEach((button) => {
+			button.addEventListener("click", () => {
+				contactFormModals.forEach((modal) => {
+					modal.classList.add("hidden");
+					modal.style.display = "none";
+				});
+			});
+		});
+
+		window.addEventListener("click", (event) => {
+			contactFormModals.forEach((modal) => {
+				if (event.target === modal) {
+					modal.classList.add("hidden");
+					modal.style.display = "none";
+				}
+			});
+		});
+	});
+</script>
