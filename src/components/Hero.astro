@@ -1,5 +1,7 @@
 ---
-import ModalForm from "./ModalForm.astro";
+import { Image } from "astro:assets";
+import petbicTitleLogo from "../assets/petbic-title-logo.svg";
+import mockupMovilHero from "../assets/mockup-movil-hero.png";
 ---
 
 <section
@@ -29,9 +31,10 @@ import ModalForm from "./ModalForm.astro";
                 class="flex items-center text-2xl pb-2 md:text-4xl lg:text-6xl text-white font-bold md:pb-8"
             >
                 Bienvenido a
-                <img
-                    src="/img/petbic-title-logo.svg"
-                    class="px-2 md:px-4  lg:pl-6 w-24 sm:w-32 md:w-40 lg:w-52"
+                <Image
+                    src={petbicTitleLogo}
+                    alt="Una descripción de mi imagen."
+                    class="px-2 md:px-4 lg:pl-6 w-24 sm:w-32 md:w-40 lg:w-52"
                 />
             </h1>
             <p class="text-sm lg:text-lg text-white font-bold pb-3 lg:pb-6">
@@ -61,8 +64,7 @@ import ModalForm from "./ModalForm.astro";
         <div
             class="section-hero-container-image flex w-52 md:w-2/5 md:mt-44 md:justify-end"
         >
-            <img src="/img/mockup-movil-hero.png" alt="mockup hero" />
+            <Image src={mockupMovilHero} alt="mockup hero" />
         </div>
     </div>
 </section>
-

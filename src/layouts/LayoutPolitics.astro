@@ -1,5 +1,7 @@
 ---
 import "@fontsource/lexend";
+import { Image } from "astro:assets";
+import petbicTitleLogo from "../assets/petbic-title-logo.svg";
 
 interface Props {
     title: string;
@@ -31,8 +33,10 @@ const { title, description } = Astro.props;
                         class="sm:order-1 flex-none text-xl font-semibold dark:text-black"
                         href="/#"
                     >
-                        <img src="/img/petbic-title-logo.svg" 
-                         class="px-2 md:px-4  lg:pl-6 w-24 sm:w-32 md:w-40 lg:w-52"
+                        <Image
+                            src={petbicTitleLogo}
+                            alt="Una descripción de mi imagen."
+                            class="px-2 md:px-4 lg:pl-6 w-24 sm:w-32 md:w-40 lg:w-52"
                         />
                     </a>
                     <div class="sm:order-3 flex items-center gap-x-2">

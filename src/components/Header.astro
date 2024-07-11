@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets";
+import petbicMenuLogo from "../assets/petbic-menu-logo.svg";
+---
+
 <section class="section-wrapper">
   <header
     class="flex flex-wrap md:justify-start md:flex-nowrap bg-white text-sm py-4 rounded-lg"
@@ -9,7 +14,7 @@
         class="sm:order-1 flex-none text-xl font-semibold dark:text-black"
         href="#"
       >
-        <img src="/img/petbic-menu-logo.svg" />
+        <Image src={petbicMenuLogo} alt="Una descripción de mi imagen." />
       </a>
       <div class="sm:order-3 flex items-center gap-x-2">
         <button

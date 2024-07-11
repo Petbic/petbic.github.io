@@ -1,3 +1,11 @@
+---
+import { Image } from "astro:assets";
+import whoAre01 from "../assets/who-are-01.png";
+import whoAre02 from "../assets/who-are-02.png";
+import whoAre03 from "../assets/who-are-03.png";
+import whoAre04 from "../assets/who-are-04.png";
+---
+
 <section
     id="section-who-we-are"
     class="section-who-we-are flex flex-col justify-center lg:flex-row"
@@ -6,25 +14,29 @@
         <div
             class="section-who-we-are-container-images flex flex-row justify-center mb-6 lg:w-1/2"
         >
-            <img
+            <Image
+                src={whoAre03}
+                alt="Una descripción de mi imagen."
                 class="-mt-6 -z-10 h-36 w-auto rounded-lg md:h-60 xl:h-80"
-                src="/img/who-are-03.png"
             />
-            <img
+            <Image
+                src={whoAre01}
+                alt="Una descripción de mi imagen."
                 class="mt-8 -ml-14 h-36 w-auto rounded-lg md:h-60 xl:h-80"
-                src="/img/who-are-01.png"
             />
         </div>
         <div
             class="section-who-we-are-container-images flex flex-row justify-center lg:w-1/2"
         >
-            <img
+            <Image
+                src={whoAre04}
+                alt="Una descripción de mi imagen."
                 class="-ml-9 h-36 w-auto rounded-lg md:h-60 xl:h-80"
-                src="/img/who-are-04.png"
             />
-            <img
+            <Image
+                src={whoAre02}
+                alt="Una descripción de mi imagen."
                 class="-mt-4 h-36 w-auto rounded-lg md:h-60 xl:h-80"
-                src="/img/who-are-02.png"
             />
         </div>
     </div>
