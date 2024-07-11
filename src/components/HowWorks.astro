@@ -1,5 +1,6 @@
 ---
 import CardHowWorks from "../components/CardHowWorks.vue";
+import { getImage } from "astro:assets";
 ---
 
 <section
@@ -30,21 +31,63 @@ import CardHowWorks from "../components/CardHowWorks.vue";
             <CardHowWorks
                 client:load
                 title="Descarga la aplicación"
-                image="/img/mobile-works-01.png"
+                image={(
+                    await getImage({
+                        src: import("../assets/mobile-works-01.png"),
+                    })
+                ).src}
+                downArrowImage={(
+                    await getImage({
+                        src: import("../assets/down-arrow.png"),
+                    })
+                ).src}
+                upArrowImage={(
+                    await getImage({
+                        src: import("../assets/up-arrow.png"),
+                    })
+                ).src}
                 alt="Image Download Aplication"
                 description="Obtén PetBic en tu dispositivo en solo unos minutos. Descárgalo fácil y rápidamente para comenzar a disfrutar de la experiencia revolucionaria de cuidado de mascotas."
             />
             <CardHowWorks
                 client:load
                 title="Registra datos diarios"
-                image="/img/mobile-works-02.png"
+                image={(
+                    await getImage({
+                        src: import("../assets/mobile-works-02.png"),
+                    })
+                ).src}
+                downArrowImage={(
+                    await getImage({
+                        src: import("../assets/down-arrow.png"),
+                    })
+                ).src}
+                upArrowImage={(
+                    await getImage({
+                        src: import("../assets/up-arrow.png"),
+                    })
+                ).src}
                 alt="Image Record Daily Data"
                 description="Ingresa de manera rápida y sencilla información clave sobre la nutrición, comportamiento, medidas y peso de tu mascota. PetBic facilita el seguimiento diario de manera intuitiva y eficiente."
             />
             <CardHowWorks
                 client:load
                 title="Verifica la evolución"
-                image="/img/mobile-works-03.png"
+                image={(
+                    await getImage({
+                        src: import("../assets/mobile-works-03.png"),
+                    })
+                ).src}
+                downArrowImage={(
+                    await getImage({
+                        src: import("../assets/down-arrow.png"),
+                    })
+                ).src}
+                upArrowImage={(
+                    await getImage({
+                        src: import("../assets/up-arrow.png"),
+                    })
+                ).src}
                 alt="Image Check the evolution"
                 description="Observa el progreso y desarrollo de tus amigos peludos de un vistazo. PetBic te proporciona herramientas visuales y análisis prácticos para mantenerlo todo bajo control y asegurar el bienestar continuo de tus mascotas."
             />

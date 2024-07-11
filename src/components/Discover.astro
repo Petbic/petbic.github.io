@@ -1,5 +1,6 @@
 ---
 import CardDiscover from "./CardDiscover.vue";
+import { getImage } from "astro:assets";
 ---
 
 <section id="section-discover" class="section-discover section-wrapper">
@@ -32,42 +33,48 @@ import CardDiscover from "./CardDiscover.vue";
     >
         <CardDiscover
             client:load
-            image="/img/dog-image.png"
+            image={(await getImage({ src: import("../assets/dog-image.png") }))
+                .src}
             title="Información general"
             secondTitle="instantánea"
             infoText="Accede a información detallada sobre tus mascotas de un vistazo. Desde datos médicos hasta detalles de identificación, ten toda la información crucial sobre tus amigos peludos al alcance de tus manos."
         />
         <CardDiscover
             client:load
-            image="/img/food-image.png"
+            image={(await getImage({ src: import("../assets/food-image.png") }))
+                .src}
             title="Registra"
             secondTitle="la dieta perfecta"
             infoText="Mantén un registro detallado del crecimiento y desarrollo de tus mascotas. Con Petbic, puedes medir y comparar fácilmente sus dimensiones a lo largo del tiempo, asegurando que estén en óptimas condiciones de salud."
         />
         <CardDiscover
             client:load
-            image="/img/cat-image.png"
+            image={(await getImage({ src: import("../assets/cat-image.png") }))
+                .src}
             title="Comportamiento"
             secondTitle="bajo control"
             infoText="¿Quieres entender mejor a tus mascotas? Registra y analiza sus comportamientos diarios. Desde hábitos de juego hasta momentos de tranquilidad, Petbic te ayuda a mantener el equilibrio perfecto en sus vidas."
         />
         <CardDiscover
             client:load
-            image="/img/dog3-image.png"
+            image={(await getImage({ src: import("../assets/dog3-image.png") }))
+                .src}
             title="Mediciones "
             secondTitle="que importan"
             infoText="Mantén un registro detallado del crecimiento y desarrollo de tus mascotas. Con Petbic, puedes medir y comparar fácilmente sus dimensiones a lo largo del tiempo, asegurando que estén en óptima salud."
         />
         <CardDiscover
             client:load
-            image="/img/dog2-image.png"
+            image={(await getImage({ src: import("../assets/dog2-image.png") }))
+                .src}
             title="Peso saludable,"
             secondTitle="mascota feliz"
             infoText="El peso es un indicador clave de la salud de tu mascota. Registra y sigue el peso de tus amigos peludos para asegurarte de que estén en óptima forma física y lleven vidas más felices y activas."
         />
         <CardDiscover
             client:load
-            image="/img/dog-cat-image.png"
+            image={(await getImage({ src: import("../assets/dog-cat-image.png") }))
+                .src}
             title="Toda la información"
             secondTitle="en un solo lugar"
             infoText="¿Te sientes abrumado con múltiples aplicaciones para diferentes aspectos del cuidado de mascotas? Con Petbic, centraliza todos los datos en un solo lugar. Simplifica tu vida y brinda a tus mascotas el cuidado integral que se merecen."
