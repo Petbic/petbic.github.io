@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import petbicMenuLogo from "../assets/petbic-menu-logo.svg";
+import ModalIframe from "./ModalIframe.astro";
+const urlMail = import.meta.env.URL_MAIL;
 ---
 
 <section class="section-wrapper">
@@ -17,12 +19,7 @@ import petbicMenuLogo from "../assets/petbic-menu-logo.svg";
         <Image src={petbicMenuLogo} alt="Una descripción de mi imagen." />
       </a>
       <div class="sm:order-3 flex items-center gap-x-2">
-        <button
-          type="button"
-          class="openContactForm py-2 px-3 inline-flex items-center gap-x-2 md:px-8 text-sm text-white font-medium rounded-full border border-gray-200 bg-gradient-to-r from-sky-500 to-indigo-500"
-        >
-          Únete a la lista de espera
-        </button>
+        <ModalIframe iframeSrc={urlMail} text="Únete a la lista de espera" />
       </div>
       <div
         id="navbar-alignment"

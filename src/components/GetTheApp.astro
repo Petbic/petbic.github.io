@@ -1,3 +1,8 @@
+---
+import ModalIframe from "./ModalIframe.astro";
+const urlMail = import.meta.env.URL_MAIL;
+---
+
 <section
     class="section-get-app bg-gradient-to-r from-[#097DE0] via-[#4158D0]
 via-0% to-[#893CD7] to-100%"
@@ -25,15 +30,12 @@ via-0% to-[#893CD7] to-100%"
                     </p>
                 </div>
                 <div class="mt-4 md:mt-8 lg:mt-12">
-                    <button
-          
-                        class="openContactForm py-2 px-3 inline-flex items-center gap-x-2 md:px-8 text-sm text-white font-bold rounded-full bg-gradient-to-r from-[#230DE0] via-[#FFCC70] via-0% to-[#FA709A] to-100%"
-                    >
-                        Únete a la lista de espera.
-                    </button>
+                    <ModalIframe
+                        iframeSrc={urlMail}
+                        text="Únete a la lista de espera"
+                    />
                 </div>
             </div>
         </div>
     </div>
 </section>
-
