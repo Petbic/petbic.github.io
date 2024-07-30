@@ -8,14 +8,17 @@ import dogBlog3 from "../assets/dog-blog3.png";
 import catBlog2 from "../assets/cat-blog2.png";
 ---
 
-<Layout title="PetBic" description=" PetBic covers all dimensions of pet care">
+<Layout
+    title="PetBic"
+    description="PetBic cubre todas las dimensiones del cuidado de mascotas"
+>
     <section
         class="articles-section-hero h-[36rem] bg-cover bg-center"
-        style= "background-image: url('/src/assets/header-blog.png')"
+        style="background-image: url('/src/assets/header-blog.png')"
     >
     </section>
     <section class="articles-section-nav section-wrapper">
-        <nav class="flex gap-3 flex-wrap  text-lg">
+        <nav class="flex gap-3 flex-wrap text-lg">
             <a
                 class="text-center my-2 inline-block w-40 rounded-full bg-blue-800 bg-opacity-10 px-4 py-2 font-semibold text-blue-800 duration-200 hover:bg-opacity-95 hover:text-white hover:no-underline sm:w-48"
                 href="/todos">Todos</a
@@ -40,101 +43,165 @@ import catBlog2 from "../assets/cat-blog2.png";
     </section>
 
     <section class="articles-section-articles-content section-wrapper">
-<!-- 2 CARDS--------------------------------- -->
-        <div class="flex flex-col w-full mb-10 sm:flex-row">
-            <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
-                <div class="relative h-full ml-0 mr-0 sm:mr-10">
-                     <div class="relative h-full w-auto bg-white border-2 rounded-lg">
-                                <Image src={dogBlog1} alt="Una descripción de mi imagen." />
-                        <p class="m-2 text-gray-600">10 Consejos esenciales para el cuidado de tu perro: ¡Hazlo feliz y saludable! </p>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full sm:w-1/2">
-                <div class="relative h-full ml-0 md:mr-10">
-                    <div class="relative h-full bg-white border-2 rounded-lg">
-                         <Image src={dogBlog2} alt="Una descripción de mi imagen." />
-                        <p class="m-2 text-gray-600">10 Consejos esenciales para el cuidado de tu perro: ¡Hazlo feliz y saludable!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 3CARDS-------------------------------------------------------------->
-         <div class="flex flex-col w-full mb-5 sm:flex-row">
-            <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
-                <div class="relative h-full ml-0 mr-0 sm:mr-10">
-                    <div class="relative h-full bg-white border-2 rounded-lg">
-                    <Image src={catBlog1} alt="Una descripción de mi imagen." />
-                        <p class="m-2 text-gray-600">Gatos felices, hogares felices: Cómo mantener a tu gato sano y contento.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
-                <div class="relative h-full ml-0 mr-0 sm:mr-10">
-                    <div class="relative h-full bg-white border-2 rounded-lg">
-                        <Image src={dogBlog3} alt="Una descripción de mi imagen." />
-                        <p class="m-2 text-gray-600">Compañeros de Vida: Perros y Gatos, ¿Cómo Elegir la Mascota Perfecta?.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full sm:w-1/2">
-                <div class="relative h-full ml-0 md:mr-10">
-               <div class="relative h-full bg-white border-2 rounded-lg">
-                        <Image src={catBlog2} alt="Una descripción de mi imagen." />
-                        <p class="m-2 text-gray-600">Compañeros de Vida: Perros y Gatos, ¿Cómo Elegir la Mascota Perfecta?.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-<!-- CODIGO REPETIDO PARA VER COMO QUEDA------------------------------------- -->
         <!-- 2 CARDS--------------------------------- -->
         <div class="flex flex-col w-full mb-10 sm:flex-row">
             <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
                 <div class="relative h-full ml-0 mr-0 sm:mr-10">
-                     <div class="relative h-full w-auto bg-white border-2 rounded-lg">
-                                <Image src={dogBlog1} alt="Una descripción de mi imagen." />
-                        <p class="m-2 text-gray-600">10 Consejos esenciales para el cuidado de tu perro: ¡Hazlo feliz y saludable! </p>
+                    <div
+                        class="relative h-full w-auto bg-white border-2 rounded-lg"
+                    >
+                        <Image
+                            src={dogBlog1}
+                            alt="Una descripción de mi imagen."
+                        />
+                        <p class="m-2 text-gray-600">
+                            <a href="/posts/post-1">
+                                10 Consejos esenciales para el cuidado de tu
+                                perro: ¡Hazlo feliz y saludable!</a
+                            >
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="w-full sm:w-1/2">
                 <div class="relative h-full ml-0 md:mr-10">
                     <div class="relative h-full bg-white border-2 rounded-lg">
-                         <Image src={dogBlog2} alt="Una descripción de mi imagen." />
-                        <p class="m-2 text-gray-600">10 Consejos esenciales para el cuidado de tu perro: ¡Hazlo feliz y saludable!</p>
+                        <Image
+                            src={dogBlog2}
+                            alt="Una descripción de mi imagen."
+                        />
+                        <p class="m-2 text-gray-600">
+                            10 Consejos esenciales para el cuidado de tu perro:
+                            ¡Hazlo feliz y saludable!
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
         <!-- 3CARDS-------------------------------------------------------------->
-         <div class="flex flex-col w-full mb-5 sm:flex-row">
+        <div class="flex flex-col w-full mb-5 sm:flex-row">
             <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
                 <div class="relative h-full ml-0 mr-0 sm:mr-10">
                     <div class="relative h-full bg-white border-2 rounded-lg">
-                    <Image src={catBlog1} alt="Una descripción de mi imagen." />
-                        <p class="m-2 text-gray-600">Gatos felices, hogares felices: Cómo mantener a tu gato sano y contento.</p>
+                        <Image
+                            src={catBlog1}
+                            alt="Una descripción de mi imagen."
+                        />
+                        <p class="m-2 text-gray-600">
+                            Gatos felices, hogares felices: Cómo mantener a tu
+                            gato sano y contento.
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
                 <div class="relative h-full ml-0 mr-0 sm:mr-10">
                     <div class="relative h-full bg-white border-2 rounded-lg">
-                        <Image src={dogBlog3} alt="Una descripción de mi imagen." />
-                        <p class="m-2 text-gray-600">Compañeros de Vida: Perros y Gatos, ¿Cómo Elegir la Mascota Perfecta?.</p>
+                        <Image
+                            src={dogBlog3}
+                            alt="Una descripción de mi imagen."
+                        />
+                        <p class="m-2 text-gray-600">
+                            Compañeros de Vida: Perros y Gatos, ¿Cómo Elegir la
+                            Mascota Perfecta?.
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="w-full sm:w-1/2">
                 <div class="relative h-full ml-0 md:mr-10">
-               <div class="relative h-full bg-white border-2 rounded-lg">
-                        <Image src={catBlog2} alt="Una descripción de mi imagen." />
-                        <p class="m-2 text-gray-600">Compañeros de Vida: Perros y Gatos, ¿Cómo Elegir la Mascota Perfecta?.</p>
+                    <div class="relative h-full bg-white border-2 rounded-lg">
+                        <Image
+                            src={catBlog2}
+                            alt="Una descripción de mi imagen."
+                        />
+                        <p class="m-2 text-gray-600">
+                            Compañeros de Vida: Perros y Gatos, ¿Cómo Elegir la
+                            Mascota Perfecta?.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- CODIGO REPETIDO PARA VER COMO QUEDA------------------------------------- -->
+        <!-- 2 CARDS--------------------------------- -->
+        <div class="flex flex-col w-full mb-10 sm:flex-row">
+            <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
+                <div class="relative h-full ml-0 mr-0 sm:mr-10">
+                    <div
+                        class="relative h-full w-auto bg-white border-2 rounded-lg"
+                    >
+                        <Image
+                            src={dogBlog1}
+                            alt="Una descripción de mi imagen."
+                        />
+                        <p class="m-2 text-gray-600">
+                            10 Consejos esenciales para el cuidado de tu perro:
+                            ¡Hazlo feliz y saludable!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full sm:w-1/2">
+                <div class="relative h-full ml-0 md:mr-10">
+                    <div class="relative h-full bg-white border-2 rounded-lg">
+                        <Image
+                            src={dogBlog2}
+                            alt="Una descripción de mi imagen."
+                        />
+                        <p class="m-2 text-gray-600">
+                            10 Consejos esenciales para el cuidado de tu perro:
+                            ¡Hazlo feliz y saludable!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 3CARDS-------------------------------------------------------------->
+        <div class="flex flex-col w-full mb-5 sm:flex-row">
+            <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
+                <div class="relative h-full ml-0 mr-0 sm:mr-10">
+                    <div class="relative h-full bg-white border-2 rounded-lg">
+                        <Image
+                            src={catBlog1}
+                            alt="Una descripción de mi imagen."
+                        />
+                        <p class="m-2 text-gray-600">
+                            Gatos felices, hogares felices: Cómo mantener a tu
+                            gato sano y contento.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
+                <div class="relative h-full ml-0 mr-0 sm:mr-10">
+                    <div class="relative h-full bg-white border-2 rounded-lg">
+                        <Image
+                            src={dogBlog3}
+                            alt="Una descripción de mi imagen."
+                        />
+                        <p class="m-2 text-gray-600">
+                            Compañeros de Vida: Perros y Gatos, ¿Cómo Elegir la
+                            Mascota Perfecta?.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full sm:w-1/2">
+                <div class="relative h-full ml-0 md:mr-10">
+                    <div class="relative h-full bg-white border-2 rounded-lg">
+                        <Image
+                            src={catBlog2}
+                            alt="Una descripción de mi imagen."
+                        />
+                        <p class="m-2 text-gray-600">
+                            Compañeros de Vida: Perros y Gatos, ¿Cómo Elegir la
+                            Mascota Perfecta?.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </Layout>
