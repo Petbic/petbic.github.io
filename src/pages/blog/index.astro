@@ -1,8 +1,5 @@
 ---
-// import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-// import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import Layout from "../../layouts/Layout.astro";
@@ -19,17 +16,14 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-    <html lang="en" class="scroll-smooth">
-        <head>
-            <meta charset="UTF-8" />
-            <meta name="description" content={description} />
-            <meta name="viewport" content="width=device-width" />
-            <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-            <meta name="generator" content={Astro.generator} />
-            <title>{title}</title>
-        </head>
-        <!-- <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} /> -->
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
         <style>
             main {
                 max-width: 1440px;
@@ -100,8 +94,8 @@ const { title, description } = Astro.props;
                     font-size: 1.563em;
                 }
             }
-        </style>
-    </html>
+        </style></head
+    >
     <body>
         <Layout
             title="PetBic"
@@ -109,10 +103,9 @@ const { title, description } = Astro.props;
         >
             <section
                 class="articles-section-hero h-[36rem] bg-cover bg-center"
-                style="background-image: url('/src/assets/cats-dogs-paws.jpg')"
+                style="background-image: url('/src/assets/header-blog.png')"
             >
             </section>
-            <!-- <Header /> -->
             <main>
                 <section>
                     <ul>
