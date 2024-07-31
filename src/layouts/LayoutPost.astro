@@ -1,0 +1,93 @@
+---
+import "@fontsource/lexend";
+import { Image } from "astro:assets";
+import petbicTitleLogo from "../assets/petbic-title-logo.svg";
+
+interface Props {
+    title: string;
+    description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <section class="section-wrapper">
+            <header
+                class="flex flex-wrap md:justify-start md:flex-nowrap bg-white text-sm py-4 rounded-lg bg-gradient-to-r from-[#097DE0] via-[#4158D0] via-0% to-[#893CD7] to-100%"
+            >
+                <nav
+                    class="max-w-full mx-auto md:px-8 flex flex-wrap basis-full items-center justify-between"
+                >
+                    <a
+                        class="sm:order-1 flex-none text-xl font-semibold dark:text-black"
+                        href="/#"
+                    >
+                        <Image
+                            src={petbicTitleLogo}
+                            alt="Una descripción de mi imagen."
+                            class="px-2 md:px-4 lg:pl-6 w-24 sm:w-32 md:w-40 lg:w-52"
+                        />
+                    </a>
+                    <div class="sm:order-3 flex items-center gap-x-2">
+                        <button
+                            type="button"
+                            class="openContactForm py-2 px-3 inline-flex items-center gap-x-2 md:px-8 text-sm text-white font-medium rounded-full border border-gray-200 bg-gradient-to-r from-sky-500 to-indigo-500"
+                        >
+                            Únete a la lista de espera
+                        </button>
+                    </div>
+                    <div
+                        id="navbar-alignment"
+                        class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:grow-0 sm:basis-auto sm:block sm:order-2"
+                    >
+                        <div
+                            class="flex flex-col gap-6 mt-5 sm:flex-row sm:items-center sm:mt-0 sm:ps-5"
+                        >
+                            <a
+                                class="font-medium text-gray-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-400"
+                                href="/#section-discover"
+                                aria-current="page">Acerca de Petbic</a
+                            >
+                            <a
+                                class="font-medium text-gray-400 hover:text-gray-200 dark:text-gray-200 dark:hover:text-gray-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-400"
+                                href="/#section-who-we-are">Sobre nosotros</a
+                            >
+                            <!-- <a
+            class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+            href="#section-faq">FAQ</a
+          > -->
+                            <a
+                                class="font-medium= text-gray-400 hover:text-gray-200 dark:text-gray-200 dark:hover:text-gray-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-400"
+                                href="/#">Blog</a
+                            >
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <section class="py-12 text-justify">
+                <slot />
+            </section>
+        </section>
+        <style is:global>
+            .section-wrapper {
+                max-width: 1440px;
+                margin: auto;
+                padding: 0 29px;
+            }
+            [data-is-top="false"] .section-header {
+                padding-top: 0;
+            }
+        </style>
+    </body>
+</html>

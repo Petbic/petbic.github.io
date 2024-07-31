@@ -1,0 +1,138 @@
+---
+import Footer from "../../components/Footer.astro";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const posts = (await getCollection("blog")).sort(
+    (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+);
+interface Props {
+    title: string;
+    description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <style>
+            main {
+                max-width: 1440px;
+                margin: auto;
+                padding: 0 29px;
+            }
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            ul li {
+                width: calc(50% - 1rem);
+            }
+            ul li * {
+                text-decoration: none;
+                transition: 0.2s ease;
+            }
+            ul li:first-child {
+                width: 100%;
+                margin-bottom: 1rem;
+                text-align: center;
+            }
+            ul li:first-child img {
+                width: 100%;
+            }
+            ul li:first-child .title {
+                font-size: 2.369rem;
+            }
+            ul li img {
+                margin-bottom: 0.5rem;
+                border-radius: 12px;
+            }
+            ul li a {
+                display: block;
+            }
+            .title {
+                margin: 0;
+                color: rgb(var(--black));
+                line-height: 1;
+            }
+            .date {
+                margin: 0;
+                color: rgb(var(--gray));
+            }
+            ul li a:hover h4,
+            ul li a:hover .date {
+                color: rgb(var(--accent));
+            }
+            ul a:hover img {
+                box-shadow: var(--box-shadow);
+            }
+            @media (max-width: 720px) {
+                ul {
+                    gap: 0.5em;
+                }
+                ul li {
+                    width: 100%;
+                    text-align: center;
+                }
+                ul li:first-child {
+                    margin-bottom: 0;
+                }
+                ul li:first-child .title {
+                    font-size: 1.563em;
+                }
+            }
+        </style></head
+    >
+    <body>
+        <Layout
+            title="PetBic"
+            description="PetBic cubre todas las dimensiones del cuidado de mascotas"
+        >
+            <section
+                class="articles-section-hero h-[36rem] bg-cover bg-center"
+                style="background-image: url('/src/assets/header-blog.png')"
+            >
+            </section>
+            <main>
+                <section>
+                    <ul>
+                        {
+                            posts.map((post) => (
+                                <li>
+                                    <a href={`/blog/${post.slug}/`}>
+                                        <img
+                                            width={720}
+                                            height={360}
+                                            src={post.data.heroImage}
+                                            alt=""
+                                        />
+                                        <h4 class="title">{post.data.title}</h4>
+                                        <p class="date">
+                                            <FormattedDate
+                                                date={post.data.pubDate}
+                                            />
+                                        </p>
+                                    </a>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </section>
+            </main>
+            <Footer />
+        </Layout>
+    </body>
+</html>

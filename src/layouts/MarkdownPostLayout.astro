@@ -1,0 +1,32 @@
+---
+const { frontmatter } = Astro.props;
+---
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+            <!-- Blog post header -->
+            <div class="py-8">
+                <h1 class="text-3xl font-bold mb-2">{frontmatter.title}</h1>
+                <p class="text-gray-500 text-sm">
+                    {frontmatter.pubDate.toString().slice(0, 10)}
+                </p>
+                <p class="text-gray-500 text-sm">
+                    Escrito por: {frontmatter.author}
+                </p>
+            </div>
+
+            <!-- Featured image -->
+            <img
+                src={frontmatter.image.src}
+                alt={frontmatter.image.alt}
+                class="w-full h-auto mb-8"
+            />
+            <!-- Blog post content -->
+            <div
+                class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto"
+            >
+            <slot/>
+            </div>
+        </div>
+    </div>
+
