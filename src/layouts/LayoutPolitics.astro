@@ -3,6 +3,7 @@ import "@fontsource/lexend";
 import { Image } from "astro:assets";
 import petbicTitleLogo from "../assets/petbic-title-logo.svg";
 import ModalIframe from "../components/ModalIframe.astro"
+import Analytics from "../components/Analytics.astro";
 const urlMail = import.meta.env.URL_MAIL;
 
 interface Props {
@@ -22,6 +23,7 @@ const { title, description } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
+        <Analytics/>
     </head>
     <body>
         <section class="section-wrapper">

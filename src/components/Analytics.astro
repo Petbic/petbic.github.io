@@ -1,0 +1,14 @@
+---
+const idAnalytics = import.meta.env.ID_ANALYTICS;
+---
+
+<script async src=`"https://www.googletagmanager.com/gtag/js?id=${idAnalytics}"`
+></script>
+<script lang="ts">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "idAnalytics");
+</script>
