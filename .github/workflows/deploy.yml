@@ -4,7 +4,7 @@ on:
   # Trigger the workflow every time you push to the `main` branch
   # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches: [main]
+    branches: [PETBIC-108]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
@@ -26,11 +26,10 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v2
       - name: Install, build, and upload your site output
-        uses: withastro/action@v0
+        uses: withastro/action@v2.0.2
         with:
             node-version: 18
-            pnpm-version: 8
-            package-manager: pnpm
+            package-manager: pnpm@8            
 
   deploy:
     needs: build
